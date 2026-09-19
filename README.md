@@ -1,92 +1,52 @@
 # PlanMinMaster
 
-Educational modular mine-planning engine used in the Planeamiento de Minado course.
+Repositorio de **ejemplo docente** para **Planeamiento de Minado — UPN 2026-2**.
 
-The currently implemented module is:
+Este `main` refleja el estado pedagógico esperado **antes de la segunda sesión de M01**.
 
-```text
-M01 — Validate, Desurvey & Drillhole Analysis
-```
-
-M01 follows this functional flow:
+## Estado actual
 
 ```text
-LOAD
-→ VALIDATE
-→ DESURVEY
-→ POSITION ASSAYS IN 3D
-→ OBSERVED GRADE DISTRIBUTION
-→ OPTIONAL REFERENCE-GRADE INTERCEPTS
-→ 3D VISUALIZATION
-→ TECHNICAL SUMMARY
-→ DATAMINE EXPORT
+Repositorio y gobernanza configurados
+→ ETAPA 1 — INVENTARIO DE DATOS completada
+→ ETAPA 2 — MODELO CONCEPTUAL no iniciada
+→ ETAPA 3 — PLAN DE VALIDACIÓN no iniciada
+→ sin validator
+→ sin desurvey
+→ sin lógica M01 implementada
 ```
 
-M01 does not calculate Mineral Resources or Mineral Reserves.
+## Ejemplo docente
 
-## Architecture
+- Proyecto: Cerro Azul
+- Dataset: DS01
+- Release: EXP03
+- Tipo: exploración
+- Naturaleza: datos sintéticos educativos
+- Estado M01: IN_PROGRESS
 
-PlanMinMaster keeps application orchestration separate from module science:
+La evidencia disponible de la ETAPA 1 está registrada en:
+`docs/implementation/IMP-001_m01_validate_desurvey.md`.
 
-```text
-main.py
-→ interactive dashboard
-→ module registry
-→ module-specific wizard
-→ runner
-→ reporter
-```
+## Principio
 
-Modules execute independently through the shared application contracts. The reporter consumes normalized module results and replaces the corresponding report section when a module is rerun.
+> **Primero minería. Después código.**
 
-## Data
+La implementación técnica avanzada previa se conserva en:
+`archive/m01-advanced-before-session2-reset`.
 
-Place exploration datasets and topography inputs under:
+No usar esa rama como solución anticipada para estudiantes.
 
-```text
-Data/
-```
+## Datos fuente
 
-PlanMinPy automatically discovers schema-valid exploration releases and topography CSV files. Teaching and project datasets are intentionally not included in this repository; see `Data/README.md` for the expected layout.
+Los archivos originales pertenecen a `data/raw/` y son inmutables.
 
-Generated runtime artifacts are written only under `outputs/`, which is excluded from version control.
+Esta puesta a punto **no reconstruye ni inventa** los CSV originales DS01/EXP03. Deben incorporarse desde el release original del docente para que el ejemplo sea reproducible.
 
-## Installation
+## Próxima sesión
 
-Python 3.12 is required.
+1. Revisar el inventario.
+2. Construir el modelo conceptual COLLAR → SURVEY → TRAYECTORIA 3D → INTERVALOS.
+3. Diseñar el plan de validación ERROR / WARNING / INFO.
 
-```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -e .
-```
-
-## Execution
-
-Start the interactive dashboard:
-
-```powershell
-python main.py
-```
-
-List registered modules or run M01 directly:
-
-```powershell
-python main.py list
-python main.py run m01 --dataset <dataset_id> --release <release_id>
-```
-
-The direct M01 command requires one uniquely discoverable schema-valid topography CSV inside `Data/`. Use the interactive dashboard when multiple candidates exist.
-
-## Datamine interoperability
-
-M01 always produces deterministic Datamine-ready staging packages. Genuine native `.dm` drillhole and PT/TR wireframe files are generated when a compatible registered Datamine backend is installed. The application never renames CSV files to imitate native Datamine files.
-
-## Tests
-
-Run the complete unit suite with:
-
-```powershell
-python -m unittest discover -s tests -v
-```
+Todavía no corresponde implementar código de M01.
