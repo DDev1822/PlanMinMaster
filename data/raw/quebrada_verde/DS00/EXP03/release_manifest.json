@@ -1,0 +1,43 @@
+{
+  "audience_role": "professor_demo",
+  "campaigns": [
+    "C01",
+    "C02",
+    "C03"
+  ],
+  "canonical_full_exploration_release": true,
+  "dataset_id": "DS00",
+  "file_sha256": {
+    "README.md": "bc185db6e27dd8449750d2c7249002fa1875685c90639c30b07e8b14d487d86a",
+    "alteration.csv": "f694c0bbd6cb51cfd815b969269b593974d5c199142b24ebb4d4f007e85acb21",
+    "assay.csv": "53e36f2b92661aa79e3244dbf65ec8725ac10e1ead0b3864a4846e2aa12aa3ce",
+    "collar.csv": "1704c5734db7b208c60a721199f52e495d09e50aecd45f0af47a35b1a1fa92d5",
+    "data_dictionary.csv": "a064bd18a482f6868f1f257ce839940792e37d2338f00858214b742235cb2ff3",
+    "density.csv": "c334678683787abe5cfecca2c0cafedcf689e580525c185544b68f4b354398b7",
+    "lithology.csv": "37fb41b5c5bc8d6dccf538b593c760f710e32b91f4882023c62bdaac416f9a69",
+    "survey.csv": "858ef09e125aeb0a1eb4ea4dd23d77f440ec64e11eed06bf79533ee0957c06e0"
+  },
+  "files": [
+    "collar.csv",
+    "survey.csv",
+    "lithology.csv",
+    "alteration.csv",
+    "assay.csv",
+    "density.csv",
+    "README.md",
+    "data_dictionary.csv"
+  ],
+  "n_alteration_intervals": 0,
+  "n_assays": 5871,
+  "n_density_samples": 464,
+  "n_holes": 42,
+  "n_lithology_intervals": 102,
+  "n_surveys": 309,
+  "project_id": "quebrada_verde",
+  "project_name": "Quebrada Verde",
+  "release_id": "EXP03",
+  "release_type": "exploration",
+  "resource_or_reserve_statement": false,
+  "schema_version": "1.0",
+  "synthetic_data": true
+}
