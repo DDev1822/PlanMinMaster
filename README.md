@@ -2,51 +2,58 @@
 
 Repositorio de **ejemplo docente** para **Planeamiento de Minado — UPN 2026-2**.
 
-Este `main` refleja el estado pedagógico esperado **antes de la segunda sesión de M01**.
+La rama `main` conserva el estado pedagógico **PRE-CÓDIGO de M01 — Validate & Desurvey**: primero se comprende la información minera, luego se define el modelo y el plan de validación, y recién después se diseña la arquitectura computacional.
 
 ## Estado actual
 
 ```text
 Repositorio y gobernanza configurados
+→ Dataset docente DS00/EXP03 incorporado
 → ETAPA 1 — INVENTARIO DE DATOS completada
-→ ETAPA 2 — MODELO CONCEPTUAL no iniciada
-→ ETAPA 3 — PLAN DE VALIDACIÓN no iniciada
+→ ETAPA 2 — MODELO CONCEPTUAL documentado
+→ ETAPA 3 — PLAN DE VALIDACIÓN documentado
+→ ETAPA 4 — ARQUITECTURA COMPUTACIONAL siguiente
+→ sin loader
 → sin validator
 → sin desurvey
-→ sin lógica M01 implementada
+→ sin visualizer
 ```
 
 ## Ejemplo docente
 
-- Proyecto: Cerro Azul
-- Dataset: DS01
-- Release: EXP03
-- Tipo: exploración
-- Naturaleza: datos sintéticos educativos
-- Estado M01: IN_PROGRESS
+- **Proyecto / depósito:** Quebrada Verde
+- **Project ID:** `quebrada_verde`
+- **Dataset:** `DS00`
+- **Release:** `EXP03`
+- **Audience role:** `professor_demo`
+- **Tipo:** exploración
+- **Campañas declaradas por el manifest:** `C01`, `C02`, `C03`
+- **Naturaleza:** datos sintéticos educativos
+- **Declaración de recursos o reservas:** no
+- **Estado M01:** `IN_PROGRESS`
 
-La evidencia disponible de la ETAPA 1 está registrada en:
-`docs/implementation/IMP-001_m01_validate_desurvey.md`.
-
-## Principio
-
-> **Primero minería. Después código.**
-
-La implementación técnica avanzada previa se conserva en:
-`archive/m01-advanced-before-session2-reset`.
-
-No usar esa rama como solución anticipada para estudiantes.
+La trazabilidad del trabajo se mantiene en [docs/implementation/IMP-001_m01_validate_desurvey.md](docs/implementation/IMP-001_m01_validate_desurvey.md).
 
 ## Datos fuente
 
-Los archivos originales pertenecen a `data/raw/` y son inmutables.
+El release canónico se encuentra en:
 
-Esta puesta a punto **no reconstruye ni inventa** los CSV originales DS01/EXP03. Deben incorporarse desde el release original del docente para que el ejemplo sea reproducible.
+```text
+data/raw/quebrada_verde/DS00/EXP03/
+```
 
-## Próxima sesión
+La topografía `data/raw/quebrada_verde/topography/Topopl.csv` es una fuente adicional: no forma parte de los archivos declarados en `file_sha256` por el manifest de `EXP03`.
 
-1. Revisar el inventario.
-2. Construir el modelo conceptual COLLAR → SURVEY → TRAYECTORIA 3D → INTERVALOS.
-3. Diseñar el plan de validación ERROR / WARNING / INFO.
+Los archivos de `data/raw/` son inmutables. Los elementos históricos locales no versionados (`data/PL00/`, `data/Topopl.csv` y `outputs/quebrada_verde/`) quedan fuera del alcance y no forman parte de este estado pedagógico.
 
-Todavía no corresponde implementar código de M01.
+## Principio
+
+> **Primero minería. Después algoritmo. Después código.**
+
+La implementación avanzada histórica se conserva en `archive/m01-advanced-before-session2-reset`; no debe usarse como solución anticipada para estudiantes.
+
+## Próxima actividad
+
+Diseñar la arquitectura computacional de M01 a partir del modelo conceptual y del plan de validación ya documentados. Todavía no corresponde implementar loader, validator, desurvey ni visualización.
+
+**T1 pendiente de incorporar al repositorio.**
